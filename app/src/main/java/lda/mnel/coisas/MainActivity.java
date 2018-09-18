@@ -18,10 +18,19 @@ public class MainActivity extends AppCompatActivity {
         final TextView textView = new TextView(this);
         textView.setText("Hello World");
 
+        TextView textView2 = new TextView(this);
+        textView2.setText("Coentros com batatas e pizza.");
 
-        Button button = new Button(this);
-        button.findViewById(R.id.);
-        button.setOnClickListener(new View.OnClickListener() {
+        Button buttonJogar = new Button(this);
+        buttonJogar.findViewById(R.id.center);
+        buttonJogar.setText("Jogar");
+
+        Button buttonInventario = new Button(this);
+        buttonInventario.findViewById(R.id.center);
+        buttonInventario.setText("Inventário");
+
+        buttonJogar.setOnClickListener(new View.OnClickListener()
+        {
             @Override
             public void onClick(View view)
             {
@@ -30,9 +39,21 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        buttonInventario.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                count--;
+                textView.setText("Hello World" + count);
+            }
+        });
+
         LinearLayout linearLayout = new LinearLayout(this);
         linearLayout.addView(textView);
-        linearLayout.addView(button);
+        linearLayout.addView(buttonJogar);
+        linearLayout.addView(buttonInventario);
+        linearLayout.addView(textView2);
 
         setContentView(linearLayout);
         //setContentView(R.layout.activity_main);
